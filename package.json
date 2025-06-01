@@ -1,5 +1,6 @@
 {
   "scripts": {
-    "test": "node script.test.js"
+    "test": "node script.test.js",
+    "test-only": "node --test-only script.test.js"
   }
 }

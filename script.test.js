@@ -39,20 +39,20 @@ test('case2', () => {
   );
 });
 
-// test('case3', () => {
-//   var input = 
-//   `  @---A---+
-//           |
-//   x-B-+   |
-//       |   |
-//       +---C`
-//   return assert.deepStrictEqual(calculate(input), 
-//     { 
-//       word: 'ACB', 
-//       path: '@---A---+|||C---+|+-B-x'
-//     }
-//   );
-// });
+test('case3', () => {
+  var input = 
+  `  @---A---+
+          |
+  x-B-+   |
+      |   |
+      +---C`
+  return assert.deepStrictEqual(calculate(input), 
+    { 
+      word: 'ACB', 
+      path: '@---A---+|||C---+|+-B-x'
+    }
+  );
+});
 
 test('case4', () => {
   var input = 
@@ -123,79 +123,79 @@ test('invalid2', () => {
   );
 });
 
-// test('invalid3', () => {
-//   var input = 
-//   `   @--A-@-+
-//           |
-//   x-B-+   C
-//       |   |
-//       +---+`
-//   return assert.deepStrictEqual(calculate(input), 
-//     Error
-//   );
-// });
+test('invalid3', () => {
+  var input = 
+  `   @--A-@-+
+          |
+  x-B-+   C
+      |   |
+      +---+`
+  return assert.deepStrictEqual(calculate(input), 
+    Error
+  );
+});
 
-// test('invalid4', () => {
-//   var input = 
-//   `   @--A---+
-//           |
-//           C
-//           x
-//       @-B-+`
-//   return assert.deepStrictEqual(calculate(input), 
-//     Error
-//   );
-// });
+test('invalid4', () => {
+  var input = 
+  `   @--A---+
+          |
+          C
+          x
+      @-B-+`
+  return assert.deepStrictEqual(calculate(input), 
+    Error
+  );
+});
 
-// test('invalid5', () => {
-//   var input = 
-//   `   @--A--x
+test('invalid5', () => {
+  var input = 
+  `   @--A--x
 
-//   x-B-+
-//       |
-//       @`
-//   return assert.deepStrictEqual(calculate(input), 
-//     Error
-//   );
-// });
+  x-B-+
+      |
+      @`
+  return assert.deepStrictEqual(calculate(input), 
+    Error
+  );
+});
 
-// test('invalid6', () => {
-//   var input = 
-//   `        x-B
-//           |
-//    @--A---+
-//           |
-//      x+   C
-//       |   |
-//       +---+`
-//   return assert.deepStrictEqual(calculate(input), 
-//     Error
-//   );
-// });
+test('invalid6', () => {
+  var input = 
+  `        x-B
+          |
+   @--A---+
+          |
+     x+   C
+      |   |
+      +---+`
+  return assert.deepStrictEqual(calculate(input), 
+    Error
+  );
+});
 
-// test('invalid7', () => {
-//   var input = 
-//   `   @--A-+
-//         |
+test('invalid7', () => {
+  var input = 
+  `   @--A-+
+        |
          
-//         B-x`
-//   return assert.deepStrictEqual(calculate(input), 
-//     Error
-//   );
-// });
+        B-x`
+  return assert.deepStrictEqual(calculate(input), 
+    Error
+  );
+});
 
-// test('invalid8', () => {
-//   var input = 
-//   `  x-B-@-A-x`
-//   return assert.deepStrictEqual(calculate(input), 
-//     Error
-//   );
-// });
+test('invalid8', () => {
+  var input = 
+  `  x-B-@-A-x`
+  return assert.deepStrictEqual(calculate(input), 
+    Error
+  );
+});
 
-// test('invalid9', () => {
-//   var input = 
-//   `  @-A-+-B-x`
-//   return assert.deepStrictEqual(calculate(input), 
-//     Error
-//   );
-// });
+test('invalid9', () => {
+  var input = 
+  `  @-A-+-B-x`
+  return assert.deepStrictEqual(calculate(input), 
+    Error
+  );
+});
