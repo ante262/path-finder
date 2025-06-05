@@ -1,11 +1,6 @@
-const test = require('node:test');
-
-const assert = require('assert/strict');
-
-const {
-  calculate
-} = require('./script');
-
+import test from 'node:test';
+import assert from 'assert/strict';
+import { calculate } from '.';
 
 test('case1', () => {
   var input = 
@@ -99,7 +94,7 @@ test('case6', () => {
   );
 });
 
-test('invalid1', () => {
+test.only('invalid1', () => {
   var input = 
   `     -A---+
           |
