@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "scripts": {
     "test": "node --import=tsx src/index.test.ts",
-    "test-only": "node --import=tsx --test-only src/index.test.ts"
+    "test-only": "node --import=tsx --test-only src/index.test.ts",
+    "check-formatting": "prettier --check src/**/*.ts",
+    "fix-formatting": "prettier --write src/**/*.ts"
   },
   "devDependencies": {
     "@types/node": "^22.15.29",
+    "prettier": "^3.5.3",
     "tsx": "^4.19.4",
     "typescript": "^5.8.3"
   }

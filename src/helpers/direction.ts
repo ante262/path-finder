@@ -1,11 +1,11 @@
-import { Position } from "../interfaces/position"
-import { isAllowed } from "./regexTest"
+import { Position } from '../interfaces/position'
+import { isAllowed } from './regexTest'
 
 function goLeft(dict: string[][], current: Position) {
   try {
     return isAllowed(dict[current.y][current.x - 1]) ? dict[current.y][current.x - 1] : false
   } catch (error) {
-    return  false
+    return false
   }
 }
 
@@ -33,9 +33,4 @@ function goDown(dict: string[][], current: Position) {
   }
 }
 
-export {
-  goLeft,
-  goRight,
-  goUp,
-  goDown
-}
+export { goLeft, goRight, goUp, goDown }

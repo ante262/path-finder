@@ -1,57 +1,47 @@
-import test from 'node:test';
-import assert from 'assert/strict';
-import { calculate } from '.';
+import test from 'node:test'
+import assert from 'assert/strict'
+import { calculate } from '.'
 
 test('case1', () => {
-  var input = 
-  `  @---A---+
+  var input = `  @---A---+
           |
   x-B-+   C
       |   |
       +---+`
-  return assert.deepStrictEqual(calculate(input), 
-    { 
-      word: 'ACB', 
-      path: '@---A---+|C|+---+|+-B-x'
-    }
-  );
-});
+  return assert.deepStrictEqual(calculate(input), {
+    word: 'ACB',
+    path: '@---A---+|C|+---+|+-B-x'
+  })
+})
 
 test('case2', () => {
-  var input = 
-  `  @
+  var input = `  @
   | +-C--+
   A |    |
   +---B--+
     |      x
     |      |
     +---D--+`
-  return assert.deepStrictEqual(calculate(input), 
-    { 
-      word: 'ABCD', 
-      path: '@|A+---B--+|+--C-+|-||+---D--+|x'
-    }
-  );
-});
+  return assert.deepStrictEqual(calculate(input), {
+    word: 'ABCD',
+    path: '@|A+---B--+|+--C-+|-||+---D--+|x'
+  })
+})
 
 test('case3', () => {
-  var input = 
-  `  @---A---+
+  var input = `  @---A---+
           |
   x-B-+   |
       |   |
       +---C`
-  return assert.deepStrictEqual(calculate(input), 
-    { 
-      word: 'ACB', 
-      path: '@---A---+|||C---+|+-B-x'
-    }
-  );
-});
+  return assert.deepStrictEqual(calculate(input), {
+    word: 'ACB',
+    path: '@---A---+|||C---+|+-B-x'
+  })
+})
 
 test('case4', () => {
-  var input = 
-  `     +-O-N-+
+  var input = `     +-O-N-+
      |     |
      |   +-I-+
  @-G-O-+ | | |
@@ -59,138 +49,103 @@ test('case4', () => {
      +-+     S
              |
              x`
-  return assert.deepStrictEqual(calculate(input), 
-    { 
-      word: 'GOONIES', 
-      path: '@-G-O-+|+-+|O||+-O-N-+|I|+-+|+-I-+|ES|x'
-    }
-  );
-});
+  return assert.deepStrictEqual(calculate(input), {
+    word: 'GOONIES',
+    path: '@-G-O-+|+-+|O||+-O-N-+|I|+-+|+-I-+|ES|x'
+  })
+})
 
 test('case5', () => {
-  var input = 
-  ` +-L-+
+  var input = ` +-L-+
  |  +A-+
 @B+ ++ H
  ++    x`
-  return assert.deepStrictEqual(calculate(input), 
-    { 
-      word: 'BLAH', 
-      path: '@B+++B|+-L-+A+++A-+Hx'
-    }
-  );
-});
+  return assert.deepStrictEqual(calculate(input), {
+    word: 'BLAH',
+    path: '@B+++B|+-L-+A+++A-+Hx'
+  })
+})
 
 test('case6', () => {
-  var input = 
-  `  @-A--+
+  var input = `  @-A--+
        |
        +-B--x-C--D`
-  return assert.deepStrictEqual(calculate(input), 
-    { 
-      word: 'AB', 
-      path: '@-A--+|+-B--x'
-    }
-  );
-});
+  return assert.deepStrictEqual(calculate(input), {
+    word: 'AB',
+    path: '@-A--+|+-B--x'
+  })
+})
 
 test.only('invalid1', () => {
-  var input = 
-  `     -A---+
+  var input = `     -A---+
           |
   x-B-+   C
       |   |
       +---+`
-  return assert.deepStrictEqual(calculate(input), 
-    Error
-  );
-});
+  return assert.deepStrictEqual(calculate(input), Error)
+})
 
 test('invalid2', () => {
-  var input = 
-  `   @--A---+
+  var input = `   @--A---+
           |
     B-+   C
       |   |
       +---+`
-  return assert.deepStrictEqual(calculate(input), 
-    Error
-  );
-});
+  return assert.deepStrictEqual(calculate(input), Error)
+})
 
 test('invalid3', () => {
-  var input = 
-  `   @--A-@-+
+  var input = `   @--A-@-+
           |
   x-B-+   C
       |   |
       +---+`
-  return assert.deepStrictEqual(calculate(input), 
-    Error
-  );
-});
+  return assert.deepStrictEqual(calculate(input), Error)
+})
 
 test('invalid4', () => {
-  var input = 
-  `   @--A---+
+  var input = `   @--A---+
           |
           C
           x
       @-B-+`
-  return assert.deepStrictEqual(calculate(input), 
-    Error
-  );
-});
+  return assert.deepStrictEqual(calculate(input), Error)
+})
 
 test('invalid5', () => {
-  var input = 
-  `   @--A--x
+  var input = `   @--A--x
 
   x-B-+
       |
       @`
-  return assert.deepStrictEqual(calculate(input), 
-    Error
-  );
-});
+  return assert.deepStrictEqual(calculate(input), Error)
+})
 
 test('invalid6', () => {
-  var input = 
-  `        x-B
+  var input = `        x-B
           |
    @--A---+
           |
      x+   C
       |   |
       +---+`
-  return assert.deepStrictEqual(calculate(input), 
-    Error
-  );
-});
+  return assert.deepStrictEqual(calculate(input), Error)
+})
 
 test('invalid7', () => {
-  var input = 
-  `   @--A-+
+  var input = `   @--A-+
         |
          
         B-x`
-  return assert.deepStrictEqual(calculate(input), 
-    Error
-  );
-});
+  return assert.deepStrictEqual(calculate(input), Error)
+})
 
 test('invalid8', () => {
-  var input = 
-  `  x-B-@-A-x`
-  return assert.deepStrictEqual(calculate(input), 
-    Error
-  );
-});
+  var input = `  x-B-@-A-x`
+  return assert.deepStrictEqual(calculate(input), Error)
+})
 
 test('invalid9', () => {
-  var input = 
-  `  @-A-+-B-x`
-  return assert.deepStrictEqual(calculate(input), 
-    Error
-  );
-});
+  var input = `  @-A-+-B-x`
+  return assert.deepStrictEqual(calculate(input), Error)
+})
