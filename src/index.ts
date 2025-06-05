@@ -1,14 +1,10 @@
+import { letterStart, letterEnd, corner, pathLetters } from "./constants/appConstants";
 import { Pointer } from "./enums/pointer";
 import { goLeft, goRight, goUp, goDown } from "./helpers/direction";
 import { hasDuplicateStartOrFinish } from "./helpers/hasDuplicateStartOrFinish";
 import { isLetter } from "./helpers/regexTest";
 import { LetterPosition } from "./interfaces/letterPosition";
 import { Position } from "./interfaces/position";
-
-const letterStart: string = '@';
-const letterEnd: string = 'x';
-const corner: string = '+';
-const pathLetters: string[] = [ '-', '|' ]
 
 export const calculate = (input: string) => {
   var letterPositions: LetterPosition[] = []
@@ -17,7 +13,7 @@ export const calculate = (input: string) => {
 
   var rowOfStart = dict.findIndex(p => p.includes(letterStart))
   if (rowOfStart === -1) return Error;
-  if (hasDuplicateStartOrFinish(dict.flat(), letterStart, letterEnd)) return Error;
+  if (hasDuplicateStartOrFinish(dict.flat())) return Error;
 
   var rowOfEnd = dict.findIndex(p => p.includes(letterEnd))
   if (rowOfEnd === -1) return Error;
