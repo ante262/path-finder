@@ -3,7 +3,7 @@ import assert from 'assert/strict'
 import { calculate } from '.'
 
 test('case1', () => {
-  var input = `  @---A---+
+  const input = `  @---A---+
           |
   x-B-+   C
       |   |
@@ -15,7 +15,7 @@ test('case1', () => {
 })
 
 test('case2', () => {
-  var input = `  @
+  const input = `  @
   | +-C--+
   A |    |
   +---B--+
@@ -29,7 +29,7 @@ test('case2', () => {
 })
 
 test('case3', () => {
-  var input = `  @---A---+
+  const input = `  @---A---+
           |
   x-B-+   |
       |   |
@@ -41,7 +41,7 @@ test('case3', () => {
 })
 
 test('case4', () => {
-  var input = `     +-O-N-+
+  const input = `     +-O-N-+
      |     |
      |   +-I-+
  @-G-O-+ | | |
@@ -56,7 +56,7 @@ test('case4', () => {
 })
 
 test('case5', () => {
-  var input = ` +-L-+
+  const input = ` +-L-+
  |  +A-+
 @B+ ++ H
  ++    x`
@@ -67,7 +67,7 @@ test('case5', () => {
 })
 
 test('case6', () => {
-  var input = `  @-A--+
+  const input = `  @-A--+
        |
        +-B--x-C--D`
   return assert.deepStrictEqual(calculate(input), {
@@ -77,7 +77,7 @@ test('case6', () => {
 })
 
 test('invalid1', () => {
-  var input = `     -A---+
+  const input = `     -A---+
           |
   x-B-+   C
       |   |
@@ -86,7 +86,7 @@ test('invalid1', () => {
 })
 
 test('invalid2', () => {
-  var input = `   @--A---+
+  const input = `   @--A---+
           |
     B-+   C
       |   |
@@ -95,7 +95,7 @@ test('invalid2', () => {
 })
 
 test('invalid3', () => {
-  var input = `   @--A-@-+
+  const input = `   @--A-@-+
           |
   x-B-+   C
       |   |
@@ -104,7 +104,7 @@ test('invalid3', () => {
 })
 
 test('invalid4', () => {
-  var input = `   @--A---+
+  const input = `   @--A---+
           |
           C
           x
@@ -113,7 +113,7 @@ test('invalid4', () => {
 })
 
 test('invalid5', () => {
-  var input = `   @--A--x
+  const input = `   @--A--x
 
   x-B-+
       |
@@ -122,7 +122,7 @@ test('invalid5', () => {
 })
 
 test('invalid6', () => {
-  var input = `        x-B
+  const input = `        x-B
           |
    @--A---+
           |
@@ -133,7 +133,7 @@ test('invalid6', () => {
 })
 
 test.only('invalid7', () => {
-  var input = `   @--A-+
+  const input = `   @--A-+
         |
          
         B-x`
@@ -141,11 +141,11 @@ test.only('invalid7', () => {
 })
 
 test('invalid8', () => {
-  var input = `  x-B-@-A-x`
+  const input = `  x-B-@-A-x`
   return assert.deepStrictEqual(calculate(input), Error('Error'))
 })
 
 test('invalid9', () => {
-  var input = `  @-A-+-B-x`
+  const input = `  @-A-+-B-x`
   return assert.deepStrictEqual(calculate(input), Error('Error'))
 })
