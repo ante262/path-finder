@@ -76,13 +76,13 @@ test('case6', () => {
   })
 })
 
-test.only('invalid1', () => {
+test('invalid1', () => {
   var input = `     -A---+
           |
   x-B-+   C
       |   |
       +---+`
-  return assert.deepStrictEqual(calculate(input), Error)
+  return assert.deepStrictEqual(calculate(input), Error('Error'))
 })
 
 test('invalid2', () => {
@@ -91,7 +91,7 @@ test('invalid2', () => {
     B-+   C
       |   |
       +---+`
-  return assert.deepStrictEqual(calculate(input), Error)
+  return assert.deepStrictEqual(calculate(input), Error('Error'))
 })
 
 test('invalid3', () => {
@@ -100,7 +100,7 @@ test('invalid3', () => {
   x-B-+   C
       |   |
       +---+`
-  return assert.deepStrictEqual(calculate(input), Error)
+  return assert.deepStrictEqual(calculate(input), Error('Error'))
 })
 
 test('invalid4', () => {
@@ -109,7 +109,7 @@ test('invalid4', () => {
           C
           x
       @-B-+`
-  return assert.deepStrictEqual(calculate(input), Error)
+  return assert.deepStrictEqual(calculate(input), Error('Error'))
 })
 
 test('invalid5', () => {
@@ -118,7 +118,7 @@ test('invalid5', () => {
   x-B-+
       |
       @`
-  return assert.deepStrictEqual(calculate(input), Error)
+  return assert.deepStrictEqual(calculate(input), Error('Error'))
 })
 
 test('invalid6', () => {
@@ -129,23 +129,23 @@ test('invalid6', () => {
      x+   C
       |   |
       +---+`
-  return assert.deepStrictEqual(calculate(input), Error)
+  return assert.deepStrictEqual(calculate(input), Error('Error'))
 })
 
-test('invalid7', () => {
+test.only('invalid7', () => {
   var input = `   @--A-+
         |
          
         B-x`
-  return assert.deepStrictEqual(calculate(input), Error)
+  return assert.deepStrictEqual(calculate(input), Error('Error'))
 })
 
 test('invalid8', () => {
   var input = `  x-B-@-A-x`
-  return assert.deepStrictEqual(calculate(input), Error)
+  return assert.deepStrictEqual(calculate(input), Error('Error'))
 })
 
 test('invalid9', () => {
   var input = `  @-A-+-B-x`
-  return assert.deepStrictEqual(calculate(input), Error)
+  return assert.deepStrictEqual(calculate(input), Error('Error'))
 })
